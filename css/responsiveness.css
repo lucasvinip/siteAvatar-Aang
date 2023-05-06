@@ -1,0 +1,31 @@
+@media(max-width:667px){
+    .menu-container .nav {
+        display: none;
+    }
+    .menu-container .nav a{
+        display: none;
+    }
+    .menu-container img{
+        width: 180px;
+        height: 120px;
+        margin-top: 20px;
+    }
+    .menu-container .menu-line{
+        width: 45vw;
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        align-items: end;
+    }
+    .menu-line{
+        display: flex;
+        flex-direction: column;
+    }
+    #line{
+        width:30px;
+        height: 5px;
+        display: flex;
+        background-color: var(--primary-color);
+    }
+    
+}
