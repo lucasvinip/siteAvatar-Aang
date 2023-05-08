@@ -1,0 +1,23 @@
+.characters{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 2px;
+}
+
+.circle{
+    width: 30vw;
+    height: 40vh;
+   background-color:  rgba(255, 255, 255, 0.15);
+   border-radius: 100%;
+   display: flex;
+    justify-content: center;
+}
+
+.circle:hover{
+    content: "";
+    border: 4px solid var(--primary-color);
+}
+
