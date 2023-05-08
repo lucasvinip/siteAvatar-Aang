@@ -1,0 +1,43 @@
+.highlights{
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+}
+
+.highlights span{
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+}
+
+.highlights span:hover{
+    content: "";
+    color: var(--primary-color);
+}
+
+.highlights .highlights_boxs{
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.highlights_boxs img{
+    width: 15vw;
+    height: 15vh;
+    border-radius: 15px;
+}
+
+
+.lines_boxs{
+    display: flex;
+    width: 90vw;
+    justify-content: space-around;
+}
+
+#line2{
+    width: 150px;
+    height: 1.5px;
+    background-color: #fff; 
+    display:flex;
+}

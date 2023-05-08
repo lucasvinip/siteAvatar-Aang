@@ -21,32 +21,79 @@
     >
     <link rel="stylesheet" href="./css/menu-container.css"
     >
+    <link rel="stylesheet" href="./css/highlights.css">
+
     <link rel="stylesheet" href="./css/responsiveness.css">
+
+    <script src="./js/app.js" defer type="module">
+    </script>
 
     <title>ThE sImPsOnS</title>
 </head>
 <body>
     <header>
-        <nav class="menu-container">
-            <img src="./img/logotipo.png" alt="logotipo">
+        <nav class="menu_container">
+            <a href="/">
+                <img src="./img/logo.png" alt="logo">
+            </a>
             <div class="nav">
-                <a href="/">Characters</a>
-                <a href="/">Curiosities</a>
+                <a href="/characters" onclick="route()">Characters</a>
+                <a href="/curiosities" onclick="route()">Curiosities</a>
             </div>
-            <div class="menu-line">
+            <div class="menu_line">
                 <div class="line1" id="line"></div>
                 <div class="line2" id="line"></div>
                 <div class="line3" id="line"></div>
             </div>
         </nav>
     </header>
-    <main>
+    <main id="main">
         <div class="highlights">
             <span>
                 Highlights
             </span>
+            <div class="highlights_boxs">
+                <a href="https://www.disneyplus.com/pt-br/movies/maggie-simpson-o-dia-mais-longo-na-creche/K0NqgjMXxXx4"
+                >
+                    <img src="./img/high1.png" alt="img1"
+                >
+                </a>
+                <a href="https://www.starplus.com/pt-br/movies/maggie-simpson-brincando-com-o-destino/3UTvcYXGHCE1"
+                >
+                    <img src="./img/high2.png" alt="img1"
+                >
+                </a>
+                <a href="https://www.starplus.com/pt-br/movies/os-simpsons-o-filme/jfibFuFryQWc"
+                >
+                    <img src="./img/high3.png" alt="img1"
+                >
+                </a>
+                <a href="https://www.disneyplus.com/pt-br/movies/o-bem-o-bart-e-o-loki/6xwLjCmfTVem"
+                >
+                    <img src="./img/high4.png" alt="img1"
+                >
+                </a>
+                <a href="https://www.disneyplus.com/pt-br/movies/os-simpsons-em-plusniversario/5SbHJwYWYey8"
+                >
+                    <img src="./img/high5.png" alt="img1"
+                >
+                </a>
+            </div>
+        </div>
+        <div class="lines_boxs">
+            <div class="line4" id="line2"></div>
+            <div class="line5" id="line2"></div>
+            <div class="line6" id="line2"></div>
+            <div class="line7" id="line2"></div>
+            <div class="line8" id="line2"></div>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <a href="https://www.linkedin.com/in/lucas-vinicius-silva-686157219/"
+        >
+            © 2022 | LUCAS VINICIUS
+        </a>
+    </footer>
 </body>
 </html>
+

@@ -27,5 +27,11 @@
         display: flex;
         background-color: var(--primary-color);
     }
+
+    .highlights{
+        display: flex;
+        flex-direction: column;
+        
+    }
     
 }
