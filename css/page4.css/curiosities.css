@@ -1,0 +1,57 @@
+.curiosities{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img{
+    
+    width: 15vw;
+    height: 20vh;
+}
+
+.curiositiesOne{
+    display: flex;
+}
+
+.curiosities h1 {
+    width: 15vw;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}
+
+.curiosities p{
+    font-size: 2rem;
+    text-align: center;
+    width: 70vw;
+}
+
+.curiositiesOne a{
+    width: 65vw;
+    color: var(--primary-color);
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.curiosities a:hover{
+    content: "";
+    color: #000;
+}
+
+.curiositiesSecond{
+    display: flex;
+    
+}
+
+.curiositiesSecond a{
+    width: 60vw;
+    color: var(--primary-color);
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
