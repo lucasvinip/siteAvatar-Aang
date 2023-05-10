@@ -1,5 +1,5 @@
 .curiosities{
-    height: 70vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -7,9 +7,11 @@
 }
 
 img{
-    
     width: 15vw;
     height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
 .curiositiesOne{

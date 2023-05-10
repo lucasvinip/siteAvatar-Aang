@@ -4,7 +4,7 @@
 }
 
 body{
-    height: 100vh;
+    
     background-image: url(../img/background.png);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
@@ -27,7 +27,7 @@ main{
 }
 
 footer{
-    height: 5vh;
+    height: 8vh;
     width: 15vw;
     display: flex;
     flex-direction: column;
