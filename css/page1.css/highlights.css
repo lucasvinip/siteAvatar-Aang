@@ -28,6 +28,10 @@
     border-radius: 15px;
 }
 
+.highlights_boxs img:hover{
+    content: "";
+    border: 1px solid #F8DB27;
+}
 
 .lines_boxs{
     display: flex;
@@ -40,4 +44,9 @@
     height: 1.5px;
     background-color: #fff; 
     display:flex;
+}
+
+#line2:hover{
+    content: "";
+    background-color: #F8DB27;
 }

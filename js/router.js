@@ -1,13 +1,19 @@
 'use strict'
 
+import './app.js'
+import { loadCharacters } from './app.js'
+import { loadPersonage } from './app.js'
+
+
+
 const routes = {
     '/'             :   '/index.html            ',
     '/characters'   :   '/pages/characters.html ',
-    '/curiosities'  :   '/pages/curiosities.html',
-    '/character'    :   '/pages/character.html  '     
+    '/personage'    :   '/pages/personage.html  ', 
+    '/curiosities'  :   '/pages/curiosities.html'
 }
 
-const route = async () => {
+export const route = async () => {
     window.event.preventDefault()
     window.history.pushState({}, "", window.event.target.href)
 
@@ -18,6 +24,12 @@ const route = async () => {
     const html = await response.text()
 
     document.getElementById('root').innerHTML = html
+
+    if(path == '/characters')
+        loadCharacters()
+    if(path == '/personage')
+        loadPersonage()
+    
 }
 
 window.route = route

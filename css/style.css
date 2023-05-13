@@ -3,7 +3,6 @@
 }
 
 body{
-    
     background-image: url(../img/background.png);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
@@ -35,6 +34,11 @@ footer{
 
 footer a{
     color: #ffff;
+}
+
+footer a:hover{
+    content: "";
+    color: var(--primary-color);
 }
 
 
