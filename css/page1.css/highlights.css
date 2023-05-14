@@ -12,7 +12,7 @@
 
 .highlights span:hover{
     content: "";
-    color: var(--primary-color);
+    color: #000;
 }
 
 .highlights .highlights_boxs{
@@ -30,7 +30,7 @@
 
 .highlights_boxs img:hover{
     content: "";
-    border: 1px solid #F8DB27;
+    border: 1px solid #000;
 }
 
 .lines_boxs{
@@ -48,5 +48,5 @@
 
 #line2:hover{
     content: "";
-    background-color: #F8DB27;
+    background-color: #000;
 }

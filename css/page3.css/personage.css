@@ -52,6 +52,8 @@
 
 .personageSimpson{
     width: 284px;
-    height: 430px;
+    height: 400px;
+    border-radius: 15%;
+
 }
 

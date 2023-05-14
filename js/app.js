@@ -8,41 +8,43 @@ const data = await fetchCharacters()
 
 const createCharacters = (name) => {
 
-    // console.log(name.image);
+    if (name.id == 14 || name.id == 15 || name.id == 16) 
+        return ''
+    else{
+        const container_characters = document.createElement('div')
+        container_characters.classList.add('container_characters')
 
-    const container_characters = document.createElement('div')
-    container_characters.classList.add('container_characters')
+        const circle = document.createElement('div')
+        circle.classList.add('circle')
 
-    const circle = document.createElement('div')
-    circle.classList.add('circle')
+        const simpsons = document.createElement('img')
+        simpsons.classList.add('simpsons')
+        simpsons.src = `../img/${name.id}.webp`
 
-    const simpsons = document.createElement('img')
-    simpsons.classList.add('simpsons')
-    simpsons.src = `../img/${name.id}.webp`
+        const nickname = document.createElement('a')
+        nickname.classList.add('name')
 
-    const nickname = document.createElement('a')
-    nickname.classList.add('name')
-    
-    if(name.id == 7)
-        nickname.textContent = 'Zuko'
-    else if(name.id == 8)
-        nickname.textContent = 'Suki'
-    else if(name.id == 11)
-        nickname.textContent = 'Azula'
-    else
-        nickname.textContent = name.name  
-      
-    nickname.href = '/personage'
-    nickname.setAttribute('onclick', 'route()')
-    nickname.id = name.id
-    nickname.addEventListener('click', () => {
-        localStorage.setItem('id', name.id)
-    })
+        if (name.id == 7)
+            nickname.textContent = 'Zuko'
+        else if (name.id == 8)
+            nickname.textContent = 'Suki'
+        else if (name.id == 11)
+            nickname.textContent = 'Azula'
+        else
+            nickname.textContent = name.name
 
-    circle.append(simpsons, nickname)
-    container_characters.append(circle)
+        nickname.href = '/personage'
+        nickname.setAttribute('onclick', 'route()')
+        nickname.id = name.id
+        nickname.addEventListener('click', () => {
+            localStorage.setItem('id', name.id)
+        })
 
-    return container_characters
+        circle.append(simpsons, nickname)
+        container_characters.append(circle)
+
+        return container_characters
+    }  
 }
 
 export const loadCharacters = async () => {
@@ -121,7 +123,7 @@ const createPersonage = (physicalDescription) => {
         container_quotesPersonage.append(quotesPersonage, container_personageSimpson)
 
         return container_quotesPersonage
-    } 
+    }
     else {
         return ""
     }
@@ -133,6 +135,6 @@ export const loadPersonage = async () => {
     const descriptions = await data.map(createPersonage)
     console.log(descriptions);
 
-    container.replaceChildren(...descriptions) 
+    container.replaceChildren(...descriptions)
 }
 

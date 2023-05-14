@@ -17,13 +17,13 @@
 }
 .menu_container .nav a{
     display: flex;
-    color: var(--primary-color);
+    color: #ffff;
     font-size: 2.2rem; 
     margin-top: 20px
 }
 .menu_container .nav a:hover{
     content: "";
-    color: var(--secondary-color);
+    color: #000;
 }
 
 .nav{
