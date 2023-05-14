@@ -25,10 +25,13 @@ export const route = async () => {
 
     document.getElementById('root').innerHTML = html
 
-    if(path == '/characters')
-        loadCharacters()
-    if(path == '/personage')
-        loadPersonage()
+    if(path == '/characters'){
+        await loadCharacters()
+    }
+    else if(path == '/personage'){
+        await loadPersonage()
+    }
+       
     
 }
 

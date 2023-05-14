@@ -1,9 +1,12 @@
 'use strict'
 
 import './router.js'
-import { route } from './router.js'
 
-const createCharacters = () =>{
+import { fetchCharacters } from './request.js'
+
+const data = await fetchCharacters()
+
+const createCharacters = (name, image) =>{
 
     const container_characters = document.createElement('div')
     container_characters.classList.add('container_characters')
@@ -13,53 +16,66 @@ const createCharacters = () =>{
 
     const simpsons = document.createElement('img')
     simpsons.classList.add('simpsons')
-    simpsons.src = '../img/high1.png'
+    simpsons.src = `https://static.wikia.nocookie.net/avatar/images/${image}`
 
-    const name = document.createElement('a')
-    name.classList.add('name')
-    name.textContent = 'Bart Simpson'
-    name.href = '/personage'
-    name.setAttribute('onclick', 'route()')
+    const nickname = document.createElement('a')
+    nickname.classList.add('name')
+    nickname.textContent = name.name
+    nickname.href = '/personage'
+    nickname.setAttribute('onclick', 'route()')
+    nickname.id = name.id
+    nickname.addEventListener('click', () =>{
+        localStorage.setItem('name', name.name)
+        localStorage.setItem('image', `https://static.wikia.nocookie.net/avatar/images/${image}`)
+    })
 
-    circle.append(simpsons, name)
+    circle.append(simpsons, nickname)
     container_characters.append(circle)
 
     return container_characters
 }
-export const loadCharacters = () => {
+
+export const loadCharacters = async () => {
     const container = document.getElementById('characters')
-   container.replaceChildren(createCharacters())
+    const avatars = await data.map(createCharacters)
+
+   container.replaceChildren(...avatars)
 }
 
-const createPersonage = () =>{
+
+const createPersonage = (physicalDescription) =>{
     
     const container_quotesPersonage = document.createElement('div')
     container_quotesPersonage.classList.add('container_quotesPersonage')
 
     const quotesPersonage = document.createElement('div')
-    quotesPersonage.classList.add('container_quotesPersonage')
+    quotesPersonage.classList.add('quotesPersonage')
 
     const h3 = document.createElement('h3')
-    h3.textContent = 'Famous Quotes'
+    h3.textContent = localStorage.getItem('name')
 
     const line = document.createElement('div')
     line.classList.add('line')
 
     const container_quotesFamous = document.createElement('div')
+    container_quotesFamous.classList.add('container_quotesFamous')
     
     const quotesFamous = document.createElement('div')
     quotesFamous.classList.add('quotesFamous')
 
-    const quotes = document.createElement('div')
-    quotes.classList.add('quotes')
-
-    const phrase1 = document.createElement('div')
-    phrase1.classList.add('phrase')
-    phrase1.textContent = 'Nothing you say can upset us. We\'re the MTV generation'
+    const quotes1 = document.createElement('div')
+    quotes1.classList.add('quotes')
     //
-    const phrase2 = document.createElement('div')
+    const quotes2 = document.createElement('div')
+    quotes2.classList.add('quotes')
+
+    let phrase1 = document.createElement('div')
+    phrase1.classList.add('phrase')
+    phrase1 = physicalDescription.gender
+    //
+    let phrase2 = document.createElement('div')
     phrase2.classList.add('phrase')
-    phrase2.textContent = 'Nothing you say can upset us. We\'re the MTV generation'
+    phrase2 = physicalDescription.eyeColor
     //
     const phrase3 = document.createElement('div')
     phrase3.classList.add('phrase')
@@ -74,12 +90,14 @@ const createPersonage = () =>{
 
     const personageSimpson = document.createElement('img')
     personageSimpson.classList.add('personageSimpson')
-    personageSimpson.src = '../img/background.png'
+    personageSimpson.src = localStorage.getItem('image')
 
 
-    quotes.append(phrase1, phrase2, phrase3, phrase4)
+    quotes1.append(phrase1, phrase2, phrase3, phrase4)
+    //
+    quotes2.append(phrase3, phrase4)
 
-    quotesFamous.append(quotes)
+    quotesFamous.append(quotes1, quotes2)
 
     container_quotesFamous.append(quotesFamous)
 
@@ -92,54 +110,10 @@ const createPersonage = () =>{
     return container_quotesPersonage
 } 
 
-// <!-- <div class="container_quotesPersonage">
-//         <div class="quotesPersonage">
-//             <h3>
-//                 Famous Quotes
-//             </h3>
-//             <div class="line"></div>
-//             <div class="container_quotesFamous">
-//                 <div class="quotesFamous">
-//                     <div class="quotes">
-//                         <p class="phrase">
-//                             Nothing you say can upset us. We're the MTV generation
-//                         </p>
-//                         <p class="phrase">
-//                             Nothing you say can upset us. We're the MTV generation
-//                         </p>
-//                     </div>
-//                     <div class="quotes">
-//                         <p class="phrase">
-//                             Nothing you say can upset us. We're the MTV generation
-//                         </p>
-//                         <p class="phrase">
-//                             Nothing you say can upset us. We're the MTV generation
-//                         </p>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//         <div class="container_personageSimpson">
-//             <img src="../img/background.png" alt="logo1" class="personageSimpson">
-//         </div>
-//     </div> -->
-
-
-export const loadPersonage = () => {
+export const loadPersonage = async () => {
     const container = document.getElementById('personage')
-   container.replaceChildren(createPersonage())
+    const descriptions = await data.map(createPersonage)
+
+   container.replaceChildren(descriptions)
 }
 
-
-
-
-// const simpsons = async () =>{
-//     const url = `https://thesimpsonsquoteapi.glitch.me/quotes?character=homer simpson`
-
-//     const response = await fetch(url)
-//     const data = await response.json()
-
-//     return data
-// }
-
-// console.log(simpsons([2]));
