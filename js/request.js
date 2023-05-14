@@ -8,3 +8,4 @@ export const fetchCharacters = async () =>{
 
     return allCharacters 
 }
+

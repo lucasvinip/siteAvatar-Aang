@@ -21,12 +21,16 @@
     justify-content: center;
 }
 .quotesPersonage h3{
+    width: 18vw;
     color: var(--primary-color);
-}
+    display: flex;
+    justify-content: center;
+}   
 .line{
     width: 17.5vw;
     height: 0.5vh;
     background-color: white;
+    
 }
 
 .quotesFamous{
@@ -44,7 +48,6 @@
 .phrase{
     width: 30vw;   
     text-align: end;
-    
 }
 
 .personageSimpson{
