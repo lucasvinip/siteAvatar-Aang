@@ -10,7 +10,7 @@ const routes = {
     '/'             :   '/index.html            ',
     '/characters'   :   '/pages/characters.html ',
     '/personage'    :   '/pages/personage.html  ', 
-    '/curiosities'  :   '/pages/curiosities.html'
+    '/creators'  :   '/pages/creators.html'
 }
 
 export const route = async () => {

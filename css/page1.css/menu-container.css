@@ -34,13 +34,14 @@
 
 .menu_line{
     display: none;
+    gap: 6px;
 }
 
 #line{
-    width:5px;
-    height: 10px;
+    width:30px;
+    height: 4px;
     display: flex;
     flex-direction: column;
-    background-color: green;
+    background-color: #fff;
     display: none;
 }

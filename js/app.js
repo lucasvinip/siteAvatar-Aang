@@ -6,45 +6,45 @@ import { fetchCharacters } from './request.js'
 
 const data = await fetchCharacters()
 
-const createCharacters = (name) => {
+const createCharacters = (avatar) => {
 
-    if (name.id == 14 || name.id == 15 || name.id == 16) 
+    if (avatar.id == 14 || avatar.id == 15 || avatar.id == 16)
         return ''
-    else{
+    else {
         const container_characters = document.createElement('div')
         container_characters.classList.add('container_characters')
 
         const circle = document.createElement('div')
         circle.classList.add('circle')
 
-        const simpsons = document.createElement('img')
-        simpsons.classList.add('simpsons')
-        simpsons.src = `../img/${name.id}.webp`
+        const avatars = document.createElement('img')
+        avatars.classList.add('simpsons')
+        avatars.src = `../img/${avatar.id}.webp`
 
         const nickname = document.createElement('a')
         nickname.classList.add('name')
 
-        if (name.id == 7)
+        if (avatar.id == 7)
             nickname.textContent = 'Zuko'
-        else if (name.id == 8)
+        else if (avatar.id == 8)
             nickname.textContent = 'Suki'
-        else if (name.id == 11)
+        else if (avatar.id == 11)
             nickname.textContent = 'Azula'
         else
-            nickname.textContent = name.name
+            nickname.textContent = avatar.name
 
         nickname.href = '/personage'
         nickname.setAttribute('onclick', 'route()')
-        nickname.id = name.id
+        nickname.id = avatar.id
         nickname.addEventListener('click', () => {
-            localStorage.setItem('id', name.id)
+            localStorage.setItem('id', avatar.id)
         })
 
-        circle.append(simpsons, nickname)
+        circle.append(avatars, nickname)
         container_characters.append(circle)
 
         return container_characters
-    }  
+    }
 }
 
 export const loadCharacters = async () => {
@@ -56,73 +56,78 @@ export const loadCharacters = async () => {
 }
 
 
-const createPersonage = (physicalDescription) => {
+const createPersonage = (avatar) => {
 
-    // console.log(physicalDescription);
+    if (localStorage.getItem('id') == avatar.id) {
+        const allPersonage = document.createElement('div')
+        allPersonage.classList.add('allPersonage')
 
-    if (localStorage.getItem('id') == physicalDescription.id) {
-        const container_quotesPersonage = document.createElement('div')
-        container_quotesPersonage.classList.add('container_quotesPersonage')
-
-        const quotesPersonage = document.createElement('div')
-        quotesPersonage.classList.add('quotesPersonage')
+        const descriptionPersonage = document.createElement('div')
+        descriptionPersonage.classList.add('descriptionPersonage')
 
         const h3 = document.createElement('h3')
-        h3.textContent = physicalDescription.name
 
+        if (avatar.id == 7)
+            h3.textContent = 'Zuko'
+        else if (avatar.id == 8)
+            h3.textContent = 'Suki'
+        else if (avatar.id == 11)
+            h3.textContent = 'Azula'
+        else
+            h3.textContent = avatar.name
+        
         const line = document.createElement('div')
         line.classList.add('line')
 
-        const container_quotesFamous = document.createElement('div')
-        container_quotesFamous.classList.add('container_quotesFamous')
+        const physicalDescription = document.createElement('div')
+        physicalDescription.classList.add('physicalDescription')
 
-        const quotesFamous = document.createElement('div')
-        quotesFamous.classList.add('quotesFamous')
+        const descriptions = document.createElement('div')
+        descriptions.classList.add('descriptions')
 
-        const quotes1 = document.createElement('div')
-        quotes1.classList.add('quotes')
+        const physical1 = document.createElement('div')
+        physical1.classList.add('physical')
         //
-        const quotes2 = document.createElement('div')
-        quotes2.classList.add('quotes')
+        const physical2 = document.createElement('div')
+        physical2.classList.add('physical')
 
-        const phrase1 = document.createElement('div')
+
+
+        const phrase1 = document.createElement('p')
         phrase1.classList.add('phrase')
-        phrase1.textContent = physicalDescription.physicalDescription.gender
+        phrase1.innerHTML =  `<span style="color: black;">Gender:</span> <span style="color: white;">${avatar.physicalDescription.gender}</span>
+                                <span style="color: black;">Eye Color:</span> <span style="color: white;">${avatar.physicalDescription.eyeColor}</span>`
+        
         //
-        const phrase2 = document.createElement('div')
+        const phrase2 = document.createElement('p')
         phrase2.classList.add('phrase')
-        phrase2.textContent = physicalDescription.physicalDescription.eyeColor
+        phrase2.innerHTML = `   <span style="color: black;">Hair Color:</span> <span style="color: white;">${avatar.physicalDescription.hairColor}</span>
+                                <span style="color: black;">Skin Color:</span> <span style="color: white;">${avatar.physicalDescription.skinColor}</span>`
+        
+
+
+        const container_personageAvatar = document.createElement('div')
+        container_personageAvatar.classList.add('container_personageAvatar')
+
+        const personageAvatar = document.createElement('img')
+        personageAvatar.classList.add('personageImg')
+        personageAvatar.src = `../img/${avatar.id}.webp`
+
+        physical1.append(phrase1)
         //
-        const phrase3 = document.createElement('div')
-        phrase3.classList.add('phrase')
-        phrase3.textContent = physicalDescription.physicalDescription.hairColor
-        //
-        const phrase4 = document.createElement('div')
-        phrase4.classList.add('phrase')
-        phrase4.textContent = physicalDescription.physicalDescription.skinColor
+        physical2.append(phrase2)
 
-        const container_personageSimpson = document.createElement('div')
-        container_personageSimpson.classList.add('container_personageSimpson')
+        descriptions.append(physical1, physical2)
 
-        const personageSimpson = document.createElement('img')
-        personageSimpson.classList.add('personageSimpson')
-        personageSimpson.src = `../img/${physicalDescription.id}.webp`
+        physicalDescription.append(descriptions)
 
-        quotes1.append(phrase1, phrase2)
-        //
-        quotes2.append(phrase3, phrase4)
+        descriptionPersonage.append(h3, line, physicalDescription)
 
-        quotesFamous.append(quotes1, quotes2)
+        container_personageAvatar.append(personageAvatar)
 
-        container_quotesFamous.append(quotesFamous)
+        allPersonage.append(descriptionPersonage, container_personageAvatar)
 
-        quotesPersonage.append(h3, line, container_quotesFamous)
-
-        container_personageSimpson.append(personageSimpson)
-
-        container_quotesPersonage.append(quotesPersonage, container_personageSimpson)
-
-        return container_quotesPersonage
+        return allPersonage
     }
     else {
         return ""
@@ -138,3 +143,9 @@ export const loadPersonage = async () => {
     container.replaceChildren(...descriptions)
 }
 
+
+
+// const createcuriosities = () =>{
+
+//     const curiositiesOne
+// }

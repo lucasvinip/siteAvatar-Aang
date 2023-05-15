@@ -1,4 +1,4 @@
-.curiosities{
+.creators{
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -14,44 +14,44 @@ img{
     align-self: center;
 }
 
-.curiositiesOne{
+.creatorOne{
     display: flex;
 }
 
-.curiosities h1 {
-    width: 15vw;
+.creators h1 {
+    width: 25vw;
     font-size: 2.5rem;
-    color: var(--primary-color);
-    display: flex;
-    justify-content: center;
-}
-
-.curiosities p{
-    font-size: 2rem;
-    text-align: center;
-    width: 70vw;
-}
-
-.curiositiesOne a{
-    width: 65vw;
-    color: var(--primary-color);
-    font-size: 2rem;
-    display: flex;
-    justify-content: flex-end;
-}
-.curiosities a:hover{
-    content: "";
     color: #000;
-}
-
-.curiositiesSecond{
     display: flex;
     
 }
 
-.curiositiesSecond a{
+.creators p{
+    font-size: 2rem;
+    text-align: center;
+    width: 75vw;
+}
+
+.creatorOne a{
+    width: 65vw;
+    color: #000;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.creators a:hover{
+    content: "";
+    color: #fff;
+}
+
+.creatorSecond{
+    display: flex;
+    
+}
+
+.creatorSecond a{
     width: 60vw;
-    color: var(--primary-color);
+    color: #000;
     font-size: 2rem;
     display: flex;
     justify-content: flex-end;

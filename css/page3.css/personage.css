@@ -1,45 +1,45 @@
 .personage{
     height: 70vh;
     width: 90vw;
-    display: flex;
-    
+    display: flex; 
 }
 
-.container_quotesPersonage{
+.allPersonage{
     height: 70vh;
     width: 90vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
-.quotesPersonage{
+.descriptionPersonage{
     height: 70vh;
     width: 52vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.quotesPersonage h3{
-    width: 18vw;
-    color: var(--primary-color);
+.descriptionPersonage h3{
+    width: 15vw;
+    color: #000;
     display: flex;
     justify-content: center;
 }   
 .line{
-    width: 17.5vw;
+    width: 15vw;
     height: 0.5vh;
-    background-color: white;
+    background-color: #fff;
     
 }
 
-.quotesFamous{
+.descriptions{
     height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
-.quotes{
+
+.physical{
     width: 50vw;
     height: 20vh;
     display: flex;
@@ -47,11 +47,11 @@
 }
 .phrase{
     width: 30vw;   
-    text-align: end;
+    text-align: start;
 }
 
-.personageSimpson{
-    width: 284px;
+.personageImg{
+    width: 400px;
     height: 400px;
     border-radius: 15%;
 

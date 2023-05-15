@@ -33,7 +33,7 @@
 .name{
     font-size: 2rem;
     color: var(--primary-color);
-    width: 5vw;
+    width: 10.5vw;
     display: flex;
     justify-content: center;
 }
