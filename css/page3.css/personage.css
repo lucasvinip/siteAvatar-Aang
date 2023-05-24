@@ -21,16 +21,10 @@
 }
 .descriptionPersonage h3{
     width: 15vw;
-    color: gray;
+    color: #fff;
     display: flex;
     justify-content: center;
 }   
-.line{
-    width: 15vw;
-    height: 0.5vh;
-    background-color: #fff;
-    
-}
 
 .descriptions{
     height: 45vh;
