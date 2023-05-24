@@ -95,14 +95,14 @@ const createPersonage = (avatar) => {
 
         const phrase1 = document.createElement('p')
         phrase1.classList.add('phrase')
-        phrase1.innerHTML =  `<span style="color: black;">Gender:</span> <span style="color: white;">${avatar.physicalDescription.gender}</span>
-                                <span style="color: black;">Eye Color:</span> <span style="color: white;">${avatar.physicalDescription.eyeColor}</span>`
+        phrase1.innerHTML =  `<span style="color: white;">Gender:</span> <span style="color: gray;">${avatar.physicalDescription.gender}</span>
+                                <span style="color: white;">Eye Color:</span> <span style="color: gray;">${avatar.physicalDescription.eyeColor}</span>`
         
         //
         const phrase2 = document.createElement('p')
         phrase2.classList.add('phrase')
-        phrase2.innerHTML = `   <span style="color: gray;">Hair Color:</span> <span style="color: white;">${avatar.physicalDescription.hairColor}</span>
-                                <span style="color: gray;">Skin Color:</span> <span style="color: white;">${avatar.physicalDescription.skinColor}</span>`
+        phrase2.innerHTML = `   <span style="color: white;">Hair Color:</span> <span style="color: gray;">${avatar.physicalDescription.hairColor}</span>
+                                <span style="color: white;">Skin Color:</span> <span style="color: gray;">${avatar.physicalDescription.skinColor}</span>`
         
 
 
