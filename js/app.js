@@ -75,10 +75,7 @@ const createPersonage = (avatar) => {
             h3.textContent = 'Azula'
         else
             h3.textContent = avatar.name
-        
-        const line = document.createElement('div')
-        line.classList.add('line')
-
+       
         const physicalDescription = document.createElement('div')
         physicalDescription.classList.add('physicalDescription')
 
@@ -121,7 +118,7 @@ const createPersonage = (avatar) => {
 
         physicalDescription.append(descriptions)
 
-        descriptionPersonage.append(h3, line, physicalDescription)
+        descriptionPersonage.append(h3, physicalDescription)
 
         container_personageAvatar.append(personageAvatar)
 
