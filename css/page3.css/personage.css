@@ -21,14 +21,14 @@
 }
 .descriptionPersonage h3{
     width: 15vw;
-    color: #000;
+    color: #ffff;
     display: flex;
     justify-content: center;
 }   
 .line{
     width: 15vw;
     height: 0.5vh;
-    background-color: #fff;
+    background-color: #0000;
     
 }
 
@@ -54,6 +54,5 @@
     width: 400px;
     height: 400px;
     border-radius: 15%;
-
 }
 
